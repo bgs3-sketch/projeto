@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #8e44ad, #5e3370);
+    background-attachment: fixed;
     margin: 0;
     padding: 20px;
     color: #333;
@@ -20,7 +21,7 @@ section {
     margin: 20px auto;
 }
 
-.linha {
+.linha {    
     display: flex;
     gap: 20px;
     justify-content: center;
