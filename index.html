@@ -1,47 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <link rel="stylesheet" href="style.ss">
 <head>
-     <meta charset="UTF-8">
-     <title>Seu Currículo Virtual</title>
+    <meta charset="UTF-8">
+    <title>Seu Currículo Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <h1>Seu Currículo virtual</h1>
+
+    <h1>Seu Currículo Virtual</h1>
+
     <section>
         <h2>Formulário</h2>
-        <form>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
+        <form onsubmit="gerarCurriculo(event)">
 
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone"><br><br>
+            <div class="linha">
+                <div class="campo">
+                    <label>Nome:</label>
+                    <input type="text" id="nome">
+                </div>
 
-            <label for="formações">Formações:</label><br>
-            <textarea id="Formações" name="Formações" rows="4" cols="50"></textarea><br><br>
+                <div class="campo">
+                    <label>Email:</label>
+                    <input type="email" id="email">
+                </div>
 
-            <label for="experiencia">Experiência Profissional:</label><br>
-            <textarea id="experiencia" name="experiencia" rows="4" cols="50"></textarea><br><br>
+                <div class="campo">
+                    <label>Telefone:</label>
+                    <input type="tel" id="telefone">
+                </div>
+            </div>
 
-            <label for="habilidades">Habilidades:</label><br>
-            <textarea id="habilidades" name="habilidades" rows="4" cols="50"></textarea><br><br>
+            <div class="campo">
+                <label>Formações:</label>
+                <textarea id="formacoes"></textarea>
+            </div>
+
+            <div class="campo">
+                <label>Experiência:</label>
+                <textarea id="experiencia"></textarea>
+            </div>
+
+            <div class="campo">
+                <label>Habilidades:</label>
+                <textarea id="habilidades"></textarea>
+            </div>
 
             <input type="submit" value="Gerar Currículo">
-            </form>
+
+        </form>
     </section>
-    <section>
-        <h2> Currículo</h2>
-            <h3>[Nome do Candidato]</h3>
-            <p><strong>Email:</strong> [Email do Candidato]</p>
-            <p><strong>Telefone:</strong> [Telefone do Candidato]</p>
-            <h4>Formações:</h4>
-            <p>[Formações do Candidato]</p>
-            <h4>Experiência Profissional:</h4>
-            <p>[Experiência Profissional do Candidato]</p>
-            <h4>Habilidades:</h4>
-            <p>[Habilidades do Candidato]</p>
+
+    <section id="curriculo">
+        <h2>Currículo</h2>
+
+        <h3 id="nomeCurriculo"></h3>
+        <p><strong>Email:</strong> <span id="emailCurriculo"></span></p>
+        <p><strong>Telefone:</strong> <span id="telefoneCurriculo"></span></p>
+
+        <h4>Formações</h4>
+        <p id="formacoesCurriculo"></p>
+
+        <h4>Experiência</h4>
+        <p id="experienciaCurriculo"></p>
+
+        <h4>Habilidades</h4>
+        <p id="habilidadesCurriculo"></p>
+
+        <button onclick="baixarPDF()">Baixar em PDF</button>
     </section>
+
+    <script src="script.js"></script>
+
+    <script>    function gerarCurriculo(event) {
+    event.preventDefault();
+
+    document.getElementById("nomeCurriculo").innerText =
+        document.getElementById("nome").value;
+
+    document.getElementById("emailCurriculo").innerText =
+        document.getElementById("email").value;
+
+    document.getElementById("telefoneCurriculo").innerText =
+        document.getElementById("telefone").value;
+
+    document.getElementById("formacoesCurriculo").innerText =
+        document.getElementById("formacoes").value;
+
+    document.getElementById("habilidadesCurriculo").innerText =
+        document.getElementById("habilidades").value;
+
+    document.getElementById("objetivoCurriculo").innerText =
+        document.getElementById("objetivo").value;
+
+    document.getElementById("idiomasCurriculo").innerText =
+        document.getElementById("idiomas").value;
+
+    document.getElementById("cursosCurriculo").innerText =
+        document.getElementById("cursos").value;
+    }
+    </script> 
+
 </body>
 </html>
