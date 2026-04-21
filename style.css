@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background: linear-gradient(to bottom, #8e44ad, #5e3370);
     background-attachment: fixed;
     margin: 0;
@@ -135,8 +135,7 @@ h2 {
 }
 
 @media (max-width: 600px) {
-   
-    * {
+    *{
         box-sizing: border-box;
     }
 
@@ -144,31 +143,36 @@ h2 {
         padding: 0; 
         margin: 0;
         width: 100%;
+        overflow-x: hidden;
     }
 
     section {
-        width: calc(90% - 20px); 
-        max-width: 500px;         
+        width: 92%;           
+        max-width: none;      
         margin: 20px auto;       
         padding: 20px;
         border-radius: 10px;       
     }
 
     #curriculo {
-        width: calc(100% - 20px);
-        margin: 10px auto;        
+        width: 92%;           
+        margin: 15px auto;        
         padding: 20px;
     }
 
     .linha {
+        display: flex;
         flex-direction: column;
-        align-items: stretch;   
+        align-items: center; 
+    } 
 
     input, textarea {
-        width: 90%;
-        max-width: 90%;
-        margin-bottom: 10px;  
-        align-items: center;  
+        width: 100%;       
+        max-width: 100%;
+        margin-bottom: 12px;
+        padding: 10px;    
+        border-radius: 8px;  
+        border: 1px solid #ccc;
     }
 
     .header {
@@ -195,10 +199,10 @@ h2 {
     }
 
     input[type="submit"], button {
-        width: 90%;
-        max-width: 100%; 
-        margin-top: 10px;
-        align-items: center;
+        width: 100%;
+        max-width: 280px;    
+        margin: 15px auto;
+        display: block;       
+        padding: 12px;
     }
-}
 }
