@@ -9,7 +9,8 @@ body {
 
 h1 {
     text-align: center;
-    color: #2c1a36;
+    color: #f7e7ff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 section {
@@ -140,7 +141,7 @@ h2 {
     }
 
     section {
-        max-width: 100%;
+        max-width: 600px;
         margin: 10px auto;
         padding: 15px;
     }
