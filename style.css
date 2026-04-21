@@ -165,9 +165,10 @@ h2 {
         align-items: stretch;   
 
     input, textarea {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 10px;    
+        width: 90%;
+        max-width: 90%;
+        margin-bottom: 10px;  
+        align-items: center;  
     }
 
     .header {
@@ -194,9 +195,10 @@ h2 {
     }
 
     input[type="submit"], button {
-        width: 100%;
+        width: 90%;
         max-width: 100%; 
         margin-top: 10px;
+        align-items: center;
     }
 }
 }
