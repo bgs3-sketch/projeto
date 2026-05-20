@@ -3,38 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Lista de Exercícios JS</title>
 
     <style>
-
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f4f4;
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background: linear-gradient(to bottom, #8e44ad, #5e3370);
+            background-attachment: fixed;
+            margin: 0;
             padding: 20px;
+            color: #333;
         }
 
-        h1{
+        h1 {
             text-align: center;
+            color: #f7e7ff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .box{
-            background: white;
-            padding: 15px;
+        h2 {
+            border-left: 4px solid #1f1f1f;
+            padding-left: 10px;
+            margin-top: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .linha {    
+            display: flex;
+            gap: 15px;
             margin-bottom: 20px;
-            border-radius: 10px;
+            flex-wrap: wrap;
         }
 
-        input{
-            padding: 5px;
-            margin: 5px;
+        input {
+            width: 220px;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #f1f1f1;
         }
 
-        button{
-            padding: 8px 15px;
+        input[type="submit"], button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 9px;
+            border: none;
             cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
         }
 
+        input[type="submit"]:hover, button:hover {
+            background: #45a049;
+        }
+
+        p {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                padding: 0; 
+                margin: 0;
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            section {
+                width: 92%;           
+                max-width: none;      
+                margin: 20px auto;       
+                padding: 20px;
+                border-radius: 10px;       
+            }
+
+            .linha {
+                display: flex;
+                flex-direction: column;
+                align-items: center; 
+            } 
+
+            input {
+                width: 100%;       
+                max-width: 100%;
+                margin-bottom: 12px;
+                padding: 10px;    
+                border-radius: 8px;  
+                border: 1px solid #ccc;
+            }
+
+            h1 {
+                font-size: 24px;
+                line-height: 1.2;
+                margin-top: 20px;
+            }
+
+            input[type="submit"], button {
+                width: 100%;
+                max-width: 280px;    
+                margin: 15px auto;
+                display: block;       
+                padding: 12px;
+            }
+        }
     </style>
 
 </head>
@@ -43,94 +128,84 @@
     <h1>Lista de Exercícios sobre Funções</h1>
 
     <!-- QUESTÃO 1 -->
-    <div class="box">
-
+    <section>
         <h2>1) MAIOR_MENOR</h2>
-
-        <input type="number" id="n1" placeholder="Número 1">
-        <input type="number" id="n2" placeholder="Número 2">
-        <input type="number" id="n3" placeholder="Número 3">
-        <input type="number" id="n4" placeholder="Número 4">
-        <input type="number" id="n5" placeholder="Número 5">
+        
+        <div class="linha">
+            <input type="number" id="n1" placeholder="Número 1">
+            <input type="number" id="n2" placeholder="Número 2">
+            <input type="number" id="n3" placeholder="Número 3">
+            <input type="number" id="n4" placeholder="Número 4">
+            <input type="number" id="n5" placeholder="Número 5">
+        </div>
 
         <button onclick="executarMaiorMenor()">Verificar</button>
-
         <p id="res1"></p>
-
-    </div>
-
+    </section>
 
     <!-- QUESTÃO 2 -->
-    <div class="box">
-
+    <section>
         <h2>2) VOGAL</h2>
 
-        <input type="text" id="letra" maxlength="1">
+        <div class="linha">
+            <input type="text" id="letra" maxlength="1" placeholder="Digite uma letra">
+        </div>
 
         <button onclick="executarVogal()">Verificar</button>
-
         <p id="res2"></p>
-
-    </div>
-
+    </section>
 
     <!-- QUESTÃO 3 -->
-    <div class="box">
-
+    <section>
         <h2>3) LIMITES</h2>
 
-        <input type="number" id="li" placeholder="Limite inferior">
-        <input type="number" id="ls" placeholder="Limite superior">
+        <div class="linha">
+            <input type="number" id="li" placeholder="Limite inferior">
+            <input type="number" id="ls" placeholder="Limite superior">
+        </div>
 
         <button onclick="executarLimites()">Mostrar</button>
-
         <p id="res3"></p>
-
-    </div>
-
+    </section>
 
     <!-- QUESTÃO 4 -->
-    <div class="box">
-
+    <section>
         <h2>4) ORDEM</h2>
 
-        <input type="number" id="o1">
-        <input type="number" id="o2">
-        <input type="number" id="o3">
+        <div class="linha">
+            <input type="number" id="o1" placeholder="Valor 1">
+            <input type="number" id="o2" placeholder="Valor 2">
+            <input type="number" id="o3" placeholder="Valor 3">
+        </div>
 
         <button onclick="executarOrdem()">Ordenar</button>
-
         <p id="res4"></p>
-
-    </div>
-
+    </section>
 
     <!-- QUESTÃO 5 -->
-    <div class="box">
-
+    <section>
         <h2>5) POSITIVO_NEGATIVO</h2>
 
-        <input type="number" id="pn">
+        <div class="linha">
+            <input type="number" id="pn" placeholder="Digite um número">
+        </div>
 
         <button onclick="executarPositivoNegativo()">Verificar</button>
-
         <p id="res5"></p>
-
-    </div>
-
+    </section>
 
     <!-- QUESTÃO 6 -->
-    <div class="box">
-
+    <section>
         <h2>6) PAR_IMPAR</h2>
 
-        <input type="number" id="pi">
+        <div class="linha">
+            <input type="number" id="pi" placeholder="Digite um número">
+        </div>
 
         <button onclick="executarParImpar()">Verificar</button>
-
         <p id="res6"></p>
+    </section>
 
-    </div>
-</body>
     <script src="script.js"></script>
+</body>
 </html>
