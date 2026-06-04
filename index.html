@@ -2,100 +2,80 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title> Seu Currículo Virtual </title>
+    <title>Seu Currículo Virtual</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
+    <button id="btnModoEscuro" type="button" onclick="alternarModoEscuro()">
+        🌙
+    </button>
+
     <h1>Seu Currículo Virtual</h1>
 
     <section>
         <h2>Formulário</h2>
-
         <form onsubmit="gerarCurriculo(event)">
-
             <div class="linha">
                 <div class="campo">
                     <label>Nome:</label>
-                    <input type="text" id="nome">
+                    <input type="text" id="nome" required>
                 </div>
 
                 <div class="campo">
                     <label>Email:</label>
-                    <input type="email" id="email">
+                    <input type="email" id="email" required>
                 </div>
 
                 <div class="campo">
                     <label>Telefone:</label>
-                    <input type="tel" id="telefone">
+                    <input type="tel" id="telefone" required>
                 </div>
             </div>
 
             <div class="campo">
                 <label>Formações:</label>
-                <textarea id="formacoes"></textarea>
+                <textarea id="formacoes" rows="4"></textarea>
             </div>
 
             <div class="campo">
                 <label>Experiência:</label>
-                <textarea id="experiencia"></textarea>
+                <textarea id="experiencia" rows="4"></textarea>
             </div>
 
             <div class="campo">
                 <label>Habilidades:</label>
-                <textarea id="habilidades"></textarea>
+                <textarea id="habilidades" rows="4"></textarea>
             </div>
 
-            <input type="submit" value="Gerar Currículo">
-
+            <button class="btn-gerar" type="submit">
+                Gerar Currículo
+            </button>
         </form>
     </section>
 
     <section id="curriculo">
-        <h2>Currículo</h2>
+       <h2>Currículo</h2>
+       <div id="conteudo-curriculo">
+            <h3 id="nomeCurriculo">Seu Nome Aqui</h3>
+            
+            <p><strong>Email:</strong> <span id="emailCurriculo"></span></p>
+            <p><strong>Telefone:</strong> <span id="telefoneCurriculo"></span></p>
 
-        <h3 id="nomeCurriculo"></h3>
-        <p><strong>Email:</strong> <span id="emailCurriculo"></span></p>
-        <p><strong>Telefone:</strong> <span id="telefoneCurriculo"></span></p>
+            <h4>Formações</h4>
+            <p id="formacoesCurriculo"></p>
 
-        <h4>Formações</h4>
-        <p id="formacoesCurriculo"></p>
+            <h4>Experiência</h4>
+            <p id="experienciaCurriculo"></p>
 
-        <h4>Experiência</h4>
-        <p id="experienciaCurriculo"></p>
-
-        <h4>Habilidades</h4>
-        <p id="habilidadesCurriculo"></p>
-
-        <button onclick="baixarPDF()">Baixar em PDF</button>
+            <h4>Habilidades</h4>
+            <p id="habilidadesCurriculo"></p>
+        </div>
+        <button id="btnBaixarPDF" onclick="baixarPDF()">Baixar em PDF</button>
     </section>
 
     <script src="script.js"></script>
-
-    <script>    function gerarCurriculo(event) {
-    event.preventDefault();
-
-    document.getElementById("nomeCurriculo").innerText =
-        document.getElementById("nome").value;
-
-    document.getElementById("emailCurriculo").innerText =
-        document.getElementById("email").value;
-
-    document.getElementById("telefoneCurriculo").innerText =
-        document.getElementById("telefone").value;
-
-    document.getElementById("formacoesCurriculo").innerText =
-        document.getElementById("formacoes").value;
-
-    document.getElementById("experienciaCurriculo").innerText =
-        document.getElementById("experiencia").value;
-
-    document.getElementById("habilidadesCurriculo").innerText =
-        document.getElementById("habilidades").value;
-    }
-    </script> 
-
 </body>
 </html>
