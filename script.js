@@ -27,8 +27,6 @@ document.addEventListener('DOMContentLoaded', carregarDados);
 
 function gerarCurriculo(event) {
     if (event) event.preventDefault();
-
-    // Captura os dados do formulário de forma segura
     const nome = document.getElementById('nome')?.value.trim() || "SEU NOME COMPLETO";
     const email = document.getElementById('email')?.value.trim() || "seuemail@exemplo.com";
     const telefone = document.getElementById('telefone')?.value.trim() || "(00) 00000-0000";
